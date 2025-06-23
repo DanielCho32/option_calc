@@ -15,13 +15,6 @@ A Python-based tool to calculate European option prices and Greeks (Delta, Gamma
 - Jupyter Notebook - Interactive demo
 - Matplotlib - For plots
 
-
-## Usage
-```bash
-pip install -r requirements.txt
-python main.py
-
-
 **## What Are the Option Greeks?**
 
 | Greek | Measures | Meaning |
@@ -32,3 +25,7 @@ python main.py
 | **Vega (V)** | Sensitivity to volatility | Change in option price for a 1% change in volatility |
 | **Rho (ρ)** | Sensitivity to interest rates | Change in option price for a 1% change in interest rate |
 
+## Usage
+```bash
+pip install -r requirements.txt
+python main.py
