@@ -15,7 +15,7 @@ A Python-based tool to calculate European option prices and Greeks (Delta, Gamma
 - Jupyter Notebook - Interactive demo
 - Matplotlib - For plots
 
-**## What Are the Option Greeks?**
+## What Are Options Greeks?
 
 | Greek | Measures | Meaning |
 |-------|----------|---------|
