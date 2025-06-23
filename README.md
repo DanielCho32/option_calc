@@ -1,18 +1,20 @@
 # Options Pricing & Greeks Calculator
 
-A Python-based tool to calculate European option prices and Greeks (Delta, Gamma, Vega, Theta, Rho) using the Black-Scholes model.
+A Python-based tool to calculate European and American option prices using the Black-Scholes and CRR binomial models respectively, as well as Greeks (Delta, Gamma, Vega, Theta, Rho).
 
 ## Features
-- Call & put option pricing
+- EU Call & Put option pricing
+- US Call & Put option pricing
 - Greeks computation
-- Interactive demo in Jupyter Notebook
-- Modular structure (easy to extend to binomial models or Monte Carlo)
+- Calculator UI & Volatility-Underlying Price heatmap in Streamlib
+- #Interactive demo in Jupyter Notebook
+- Modular structure
 
 ## Languages and Libraries
 - Python - Core programming language
 - NumPy - Numerical operations
 - SciPy - Statistical functions and option pricing models
-- Jupyter Notebook - Interactive demo
+- Streamlib - Interactive UI
 - Matplotlib - For plots
 
 ## What Are Options Greeks?
