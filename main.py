@@ -2,7 +2,7 @@
 
 # Imports
 from us_option_pricing import us_option_binomial
-from eu_pricing import black_scholes_price
+from eu_option_pricing import black_scholes_price
 from greeks import delta, gamma, vega, theta, rho
 from greeks import explain_delta, explain_gamma, explain_vega, explain_theta, explain_rho
 
