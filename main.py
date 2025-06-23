@@ -7,7 +7,7 @@ from greeks import delta, gamma, vega, theta, rho
 from greeks import explain_delta, explain_gamma, explain_vega, explain_theta, explain_rho
 
 def main():
-    print("Option Pricing Calculator\n")
+    print("Option Pricing Calculator\n", flush=True)
 
     # Inputs
     model_choice = input("Choose option ('american' or 'european'): ").strip().lower()
