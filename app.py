@@ -23,9 +23,25 @@ st.sidebar.header("Input Parameters")
 model_choice = st.sidebar.selectbox("Option Model", ["European", "American"])
 S = st.sidebar.number_input("Stock Price (S)", value=100.0)
 K = st.sidebar.number_input("Strike Price (K)", value=100.0)
-T = st.sidebar.number_input("Time to Maturity (in years, T)", value=1.0)
-r = st.sidebar.number_input("Risk-Free Rate (r)", value=0.05)
-sigma = st.sidebar.number_input("Volatility (σ)", value=0.2)
+
+time_input_mode = st.sidebar.radio("How would you like to input time to maturity?", ["Years", "Days"])
+
+if time_input_mode == "Years":
+    T = st.sidebar.number_input("Time to Maturity (T) in Years", min_value=0.0001, value=1.0000, step=0.0001, format="%.4f")
+else:
+    days_to_expiry = st.sidebar.number_input("Days to Expiry", min_value=1, value=365)
+    T = days_to_expiry / 365.0
+
+# Risk-Free Rate
+r_input = st.sidebar.number_input("Risk-Free Rate (r) in %", value=5.0, min_value=0.0, max_value=100.0, step=0.01)
+r = r_input / 100.0  # convert percentage to decimal
+st.sidebar.caption("Example: enter 5.25 for 5.25% annualized rate")
+
+# Volatility
+sigma_input = st.sidebar.number_input("Volatility (σ) in %", value=20.0, min_value=0.01, max_value=500.0, step=0.1)
+sigma = sigma_input / 100.0  # convert percentage to decimal
+st.sidebar.caption("Example: enter 140.5 for 140.5% implied volatility")
+
 if model_choice == "American":
     steps = st.sidebar.slider("Binomial Steps (for American Option)", min_value=10, max_value=500, value=100)
 else:
