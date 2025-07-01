@@ -9,7 +9,7 @@ This tool is a web-based application built with Streamlit that calculates **Euro
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Model Selection**: Choose between European or American option models  
 - **Custom Inputs**: Stock price, strike price, time to expiry (in years or days), risk-free rate, volatility, and binomial steps  
@@ -17,12 +17,12 @@ This tool is a web-based application built with Streamlit that calculates **Euro
 - **Visual Heatmap**: Visualize option price sensitivity with respect to stock price and volatility  
 - **Desktop CLI Support**: Use `main.py` for quick command-line-based calculation and explanations  
 
-> ⚠️ **Planned Feature**:  
-> A **PnL Heatmap** to simulate gains/losses across strategies or market conditions
+> **Planned Feature**:  
+> **PnL Heatmap** to simulate gains/losses across strategies or market conditions
 
 ---
 
-## 🛠 Tech Stack
+## Tools Used
 
 - `Python`  
 - `Streamlit` — for the UI  
@@ -30,7 +30,7 @@ This tool is a web-based application built with Streamlit that calculates **Euro
 
 ---
 
-## 📷 UI Snapshot
+## UI Snapshot
 
 *(Add a screenshot named `preview_heatmap.png` in the project root if you'd like one to appear here)*
 
