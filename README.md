@@ -1,33 +1,38 @@
 # Options Pricing & Greeks Calculator
 
-A Python-based tool to calculate European and American option prices using the Black-Scholes and CRR binomial models respectively, as well as Greeks (Delta, Gamma, Vega, Theta, Rho).
+This tool is a web-based application built with Streamlit that calculates **European** and **American** option prices and their associated **Greeks**. It supports:
 
-## Features
-- EU Call & Put option pricing
-- US Call & Put option pricing
-- Greeks computation
-- Calculator UI & Volatility-Underlying Price heatmap in Streamlib
-- #Interactive demo in Jupyter Notebook
-- Modular structure
+- **European Options** via the Black-Scholes model  
+- **American Options** via a Binomial Tree method  
+- Real-time calculation of **Delta**, **Gamma**, **Vega**, **Theta**, and **Rho**
+- A dynamic heatmap of option prices across a range of stock prices and volatilities
 
-## Languages and Libraries
-- Python - Core programming language
-- NumPy - Numerical operations
-- SciPy - Statistical functions and option pricing models
-- Streamlib - Interactive UI
-- Matplotlib - For plots
+---
 
-## What Are Options Greeks?
+## 🚀 Features
 
-| Greek | Measures | Meaning |
-|-------|----------|---------|
-| **Delta (Δ)** | Sensitivity to stock price | Change in option price for a $1 change in stock price |
-| **Gamma (Γ)** | Sensitivity of Delta | Change in Delta for a $1 change in stock price |
-| **Theta (Θ)** | Time decay | How much value the option loses each day |
-| **Vega (V)** | Sensitivity to volatility | Change in option price for a 1% change in volatility |
-| **Rho (ρ)** | Sensitivity to interest rates | Change in option price for a 1% change in interest rate |
+- **Model Selection**: Choose between European or American option models  
+- **Custom Inputs**: Stock price, strike price, time to expiry (in years or days), risk-free rate, volatility, and binomial steps  
+- **Greek Calculations**: Intuitive breakdown and real-time computation of the five key option Greeks  
+- **Visual Heatmap**: Visualize option price sensitivity with respect to stock price and volatility  
+- **Desktop CLI Support**: Use `main.py` for quick command-line-based calculation and explanations  
 
-## Usage
-```bash
-pip install -r requirements.txt
-python main.py
+> ⚠️ **Planned Feature**:  
+> A **PnL Heatmap** to simulate gains/losses across strategies or market conditions
+
+---
+
+## 🛠 Tech Stack
+
+- `Python`  
+- `Streamlit` — for the UI  
+- `NumPy`, `SciPy`, `Matplotlib` — for financial computations and visualizations
+
+---
+
+## 📷 UI Snapshot
+
+*(Add a screenshot named `preview_heatmap.png` in the project root if you'd like one to appear here)*
+
+```python
+st.image("preview_heatmap.png")  # Optional: Image of your heatmap in app
