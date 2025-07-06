@@ -41,7 +41,6 @@ python -m venv venv
 venv\Scripts\activate
 # macOS/Linux
 # source venv/bin/activate
-
 pip install --upgrade pip setuptools
 pip install -r requirements.txt
 pip install --editable .
