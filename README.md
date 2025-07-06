@@ -57,4 +57,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-📧 cho.daniel32@gmail.com
+cho.daniel32@gmail.com
