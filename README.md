@@ -32,7 +32,5 @@ This tool is a web-based application built with Streamlit that calculates **Euro
 
 ## UI Snapshot
 
-*(Add a screenshot named `preview_heatmap.png` in the project root if you'd like one to appear here)*
-
 ```python
-st.image("preview_heatmap.png")  # Optional: Image of your heatmap in app
+st.image("preview_ui.png")
