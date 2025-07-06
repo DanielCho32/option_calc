@@ -31,6 +31,4 @@ This tool is a web-based application built with Streamlit that calculates **Euro
 ---
 
 ## UI Snapshot
-
-```python
-st.image("preview_ui.png")
+![UI Preview](preview_ui.png)
