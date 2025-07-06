@@ -33,10 +33,21 @@ This tool is a web-based application built with Streamlit that calculates **Euro
 Clone the repository and install dependencies:
 
 ```bash
+
 git clone https://github.com/DanielCho32/option_calc.git
 cd option_calc
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# macOS/Linux
+# source venv/bin/activate
+
+pip install --upgrade pip setuptools
 pip install -r requirements.txt
-streamlit run app.py
+pip install --editable .
+pytest -q
+streamlit run src/option_calc/app.py
+
 ```
 
 ---
