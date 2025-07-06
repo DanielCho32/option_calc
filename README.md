@@ -24,6 +24,7 @@ This tool is a web-based application built with Streamlit that calculates **Euro
 - `Python`  
 - `Streamlit` — for the UI  
 - `NumPy`, `SciPy`, `Matplotlib` — for financial computations and visualizations
+- `Pytest` — for testing
 
 ---
 
