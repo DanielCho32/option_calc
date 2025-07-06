@@ -48,8 +48,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## UI Snapshots
 
-![UI Preview](preview_ui.png)
-![UI_Preview](preview_ui2.png)
 ![UI_Preview](preview_heatmap.png)
 
 ---
