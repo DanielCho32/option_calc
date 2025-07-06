@@ -46,7 +46,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-## UI Snapshots
+## UI Snapshot
 
 ![UI Preview](assets/preview_heatmap.png)
 
