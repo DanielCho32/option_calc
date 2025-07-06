@@ -2,10 +2,10 @@
 
 # Main Page
 import streamlit as st
-from us_option_pricing import us_option_binomial
-from eu_option_pricing import black_scholes_price
-from greeks import delta, gamma, vega, theta, rho
-from greeks import explain_delta, explain_gamma, explain_vega, explain_theta, explain_rho
+from option_calc.us_option_pricing import us_option_binomial
+from option_calc.eu_option_pricing import black_scholes_price
+from option_calc.greeks import delta, gamma, vega, theta, rho
+from option_calc.greeks import explain_delta, explain_gamma, explain_vega, explain_theta, explain_rho
 
 # Heatmap
 import numpy as np
