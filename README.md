@@ -4,7 +4,7 @@ This tool is a web-based application built with Streamlit that calculates **Euro
 
 - **European Options** via the Black-Scholes model  
 - **American Options** via a Binomial Tree method  
-- Real-time calculation of **Delta**, **Gamma**, **Vega**, **Theta**, and **Rho**
+- Real-time calculation of **Delta**, **Gamma**, **Vega**, **Theta**, and **Rho**  
 - A dynamic heatmap of option prices across a range of stock prices and volatilities
 
 ---
@@ -30,5 +30,31 @@ This tool is a web-based application built with Streamlit that calculates **Euro
 
 ---
 
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/DanielCho32/option_calc.git
+cd option_calc
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
 ## UI Snapshot
+
 ![UI Preview](preview_ui.png)
+
+---
+
+## Contact
+
+📧 cho.daniel32@gmail.com
