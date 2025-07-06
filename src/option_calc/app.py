@@ -120,7 +120,7 @@ for i in range(price_grid.shape[0]):
 
 # Plot
 fig, ax = plt.subplots(figsize=(6, 4), dpi=50)
-c = ax.contourf(S_grid, sigma_grid, price_grid, levels=50, cmap="viridis")
+c = ax.contourf(S_grid, sigma_grid, price_grid, levels=50, cmap="RdYlGn")
 ax.set_title(f"{greek_option} Option Price Heatmap")
 ax.set_xlabel("Stock Price (S)")
 ax.set_ylabel("Volatility (σ)")
