@@ -37,10 +37,12 @@ Clone the repository and install dependencies:
 git clone https://github.com/DanielCho32/option_calc.git
 cd option_calc
 python -m venv venv
+
 # Windows
 venv\Scripts\activate
 # macOS/Linux
 # source venv/bin/activate
+
 pip install --upgrade pip setuptools
 pip install -r requirements.txt
 pip install --editable .
