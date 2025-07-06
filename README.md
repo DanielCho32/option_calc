@@ -16,7 +16,7 @@ This tool is a web-based application built with Streamlit that calculates **Euro
 - **Greek Calculations**: Intuitive breakdown and real-time computation of the five key option Greeks  
 - **Visual Heatmap**: Visualize option price sensitivity with respect to stock price and volatility  
 - **Desktop CLI Support**: Use `main.py` for quick command-line-based calculation and explanations
-- 
+  
 ---
 
 ## Tools Used
