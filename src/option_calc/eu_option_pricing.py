@@ -16,6 +16,8 @@ def black_scholes_price(S, K, T, r, sigma, option_type='call'):
     Returns:
         float: Theoretical option price
     '''
+
+    # Constants
     d1 = (log(S / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * sqrt(T))
     d2 = d1 - sigma * sqrt(T)
 
