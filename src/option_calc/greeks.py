@@ -1,8 +1,6 @@
 #greeks.py
 
-#
 # File to give some more detail on what the Greeks actually mean in the context of a given option
-#
 
 from math import log, sqrt, exp
 from scipy.stats import norm
@@ -14,7 +12,7 @@ def _d1(S, K, T, r, sigma):
 def _d2(S, K, T, r, sigma):
     return _d1(S, K, T, r, sigma) - sigma * sqrt(T)
 
-# Greek Calculations
+# Greeks Calculations
 def delta(S, K, T, r, sigma, option_type='call'):
     d1 = _d1(S, K, T, r, sigma)
     if option_type == 'call':
@@ -28,7 +26,7 @@ def gamma(S, K, T, r, sigma):
 
 def vega(S, K, T, r, sigma):
     d1 = _d1(S, K, T, r, sigma)
-    return S * norm.pdf(d1) * sqrt(T) / 100  # per 1% change in vol
+    return S * norm.pdf(d1) * sqrt(T) / 100
 
 def theta(S, K, T, r, sigma, option_type='call'):
     d1 = _d1(S, K, T, r, sigma)
@@ -41,7 +39,7 @@ def theta(S, K, T, r, sigma, option_type='call'):
 def rho(S, K, T, r, sigma, option_type='call'):
     d2 = _d2(S, K, T, r, sigma)
     if option_type == 'call':
-        return K * T * exp(-r * T) * norm.cdf(d2) / 100  # per 1% change in rate
+        return K * T * exp(-r * T) * norm.cdf(d2) / 100
     elif option_type == 'put':
         return -K * T * exp(-r * T) * norm.cdf(-d2) / 100
 
@@ -49,7 +47,9 @@ def rho(S, K, T, r, sigma, option_type='call'):
 
 def explain_delta(delta_val):
     direction = "increase" if delta_val >= 0 else "decrease"
-    return f"Delta: A $1 change in stock price will {direction} the option price by approximately ${abs(delta_val):.2f}."
+    return (
+        f"Delta: A $1 change in stock price will {direction} "
+        f"the option price by approximately ${abs(delta_val):.2f}.")
 
 def explain_gamma(gamma_val):
     return f"Gamma: For every $1 change in stock price, Delta changes by approximately {gamma_val:.4f}."
