@@ -2,10 +2,10 @@
 
 # Main Page
 import streamlit as st
-from option_calc.us_option_pricing import us_option_binomial
-from option_calc.eu_option_pricing import black_scholes_price
-from option_calc.greeks import delta, gamma, vega, theta, rho
-from option_calc.greeks import explain_delta, explain_gamma, explain_vega, explain_theta, explain_rho
+from us_option_pricing import us_option_binomial
+from eu_option_pricing import black_scholes_price
+from greeks import delta, gamma, vega, theta, rho
+from greeks import explain_delta, explain_gamma, explain_vega, explain_theta, explain_rho
 
 # Heatmap
 import numpy as np
@@ -13,7 +13,6 @@ import matplotlib.pyplot as plt
 from scipy.stats import norm
 import io
 
-# Logic
 st.set_page_config(page_title="Options Pricing & Greeks Calculator", layout="wide")
 
 st.title("Options Pricing & Greeks Calculator")
@@ -32,14 +31,14 @@ else:
     days_to_expiry = st.sidebar.number_input("Days to Expiry", min_value=1, value=365)
     T = days_to_expiry / 365.0
 
-# Risk-Free Rate
+# Risk Free Rate
 r_input = st.sidebar.number_input("Risk-Free Rate (r) in %", value=5.0, min_value=0.0, max_value=100.0, step=0.01)
-r = r_input / 100.0  # convert percentage to decimal
+r = r_input / 100.0
 st.sidebar.caption("Example: enter 5.25 for 5.25% annualized rate")
 
 # Volatility
 sigma_input = st.sidebar.number_input("Volatility (σ) in %", value=20.0, min_value=0.01, max_value=500.0, step=0.1)
-sigma = sigma_input / 100.0  # convert percentage to decimal
+sigma = sigma_input / 100.0
 st.sidebar.caption("Example: enter 140.5 for 140.5% implied volatility")
 
 if model_choice == "American":
@@ -65,7 +64,7 @@ elif model_choice == "American":
     st.write(f"**Put Price**: ${put_price:.2f}")
 
 st.markdown("---")
-greek_option = st.selectbox("▶Select Option Type for Greeks", ["Call", "Put"])
+greek_option = st.selectbox("-> Select Option Type for Greeks", ["Call", "Put"])
 
 greek_type = greek_option.lower()
 d = delta(S, K, T, r, sigma, greek_type)
@@ -81,7 +80,7 @@ st.markdown(f"**Vega**: {v:.4f}")
 st.markdown(f"**Theta**: {t:.4f}")
 st.markdown(f"**Rho**: {rh:.4f}")
 
-with st.expander("◆ What do these Greeks mean?"):
+with st.expander("What do these Greeks mean?"):
     st.text(explain_delta(d))
     st.text(explain_gamma(g))
     st.text(explain_vega(v))
@@ -91,7 +90,6 @@ with st.expander("◆ What do these Greeks mean?"):
 
 #HEATMAP EU
 
-# --- Black-Scholes formula functions ---
 def black_scholes_call_price(S, K, T, r, sigma):
     d1 = (np.log(S / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
     d2 = d1 - sigma * np.sqrt(T)
@@ -102,12 +100,12 @@ def black_scholes_put_price(S, K, T, r, sigma):
     d2 = d1 - sigma * np.sqrt(T)
     return K * np.exp(-r * T) * norm.cdf(-d2) - S * norm.cdf(-d1)
 
-# Prepare grid
+# Grid
 S_vals   = np.linspace(S * 0.5, S * 1.5, 100)
 sigma_vals = np.linspace(0.01, 1.0, 100)
 S_grid, sigma_grid = np.meshgrid(S_vals, sigma_vals)
 
-# Compute prices according to the master option_type
+# Calc prices
 price_grid = np.zeros_like(S_grid)
 for i in range(price_grid.shape[0]):
     for j in range(price_grid.shape[1]):
@@ -127,8 +125,6 @@ ax.set_ylabel("Volatility (σ)")
 fig.colorbar(c, label="Option Price")
 
 buf = io.BytesIO()
-fig.savefig(buf, format="png", dpi=200)  # save at 80 dpi
+fig.savefig(buf, format="png", dpi=200)
 buf.seek(0)
 st.image(buf, width=900)
-
-#PNL HEATMAP
