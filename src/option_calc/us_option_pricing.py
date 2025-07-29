@@ -19,10 +19,11 @@ def us_option_binomial(S, K, T, r, sigma, steps, option_type):
   
     from math import exp, sqrt
 
-    dt = T / steps                       # Time per step
-    u = exp(sigma * sqrt(dt))            # Up factor
-    d = 1 / u                            # Down factor
-    p = (exp(r * dt) - d) / (u - d)      # Risk-neutral probability
+    # Constants
+    dt = T / steps
+    u = exp(sigma * sqrt(dt))
+    d = 1 / u
+    p = (exp(r * dt) - d) / (u - d)
 
     # Final asset prices at maturity
     asset_prices = [S * (u ** j) * (d ** (steps - j)) for j in range(steps + 1)]
@@ -35,12 +36,11 @@ def us_option_binomial(S, K, T, r, sigma, steps, option_type):
     else:
         raise ValueError("option_type must be 'call' or 'put'")
 
-    # Backward induction to calculate option price
+    # Backward induction
     for i in range(steps - 1, -1, -1):
         for j in range(i + 1):
             asset_price = S * (u ** j) * (d ** (i - j))
             continuation_value = exp(-r * dt) * (p * option_values[j + 1] + (1 - p) * option_values[j])
-
             if option_type == 'call':
                 option_values[j] = max(asset_price - K, continuation_value)
             else:
